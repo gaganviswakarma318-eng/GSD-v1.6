@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+  <meta name="color-scheme" content="dark" id="colorScheme" />
+  <title>GS Downloads</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/themes.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <link rel="stylesheet" href="./css/safari.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+
+  <!-- JS -->
+  <script src="./js/style.js" defer></script>
+  <script type="module" src="./js/app.js" defer></script>
+  <script src="./js/downloadProgress.js" defer></script>
+</head>
+
+<body>
+  <!-- BACKGROUND STARS -->
+  <div class="bg-animation" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="nav">
+    <div class="navbar">
+      <button class="logo-text" id="logoText">GSD</button>
+
+      <button class="theme-toggle" id="themeToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e3e3e3" class="theme-dot dot">
+          <path
+            d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-177 23q17-17 17-43t-17-43q-17-17-43-17t-43 17q-17 17-17 43t17 43q17 17 43 17t43-17Zm120-160q17-17 17-43t-17-43q-17-17-43-17t-43 17q-17 17-17 43t17 43q17 17 43 17t43-17Zm200 0q17-17 17-43t-17-43q-17-17-43-17t-43 17q-17 17-17 43t17 43q17 17 43 17t43-17Zm120 160q17-17 17-43t-17-43q-17-17-43-17t-43 17q-17 17-17 43t17 43q17 17 43 17t43-17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z" />
+        </svg>
+      </button>
+    </div>
+
+
+    <div class="theme-menu" id="themeMenu">
+      <button class="theme-btn" data-theme="light">☀️ Light</button>
+      <button class="theme-btn" data-theme="dark">🌑 Dark</button>
+      <button class="theme-btn" data-theme="pulse">💜 Pulse</button>
+    </div>
+  </header>
+  <!-- ---------------------------MAIN -------------------------------- -->
+  <!-- panel one -->
+  <main class="main-container">
+    <section class="download-panel card">
+      <div class="input-group">
+        <input type="text" id="url" placeholder="Paste link here" />
+
+        <button id="pasteBtn" class="paste-btn" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="paste-svg">
+            <path
+              d="M128 64C92.7 64 64 92.7 64 128L64 448C64 483.3 92.7 512 128 512L240 512L240 288C240 226.1 290.1 176 352 176L416 176L416 128C416 92.7 387.3 64 352 64L128 64zM312 176L168 176C154.7 176 144 165.3 144 152C144 138.7 154.7 128 168 128L312 128C325.3 128 336 138.7 336 152C336 165.3 325.3 176 312 176zM352 224C316.7 224 288 252.7 288 288L288 512C288 547.3 316.7 576 352 576L512 576C547.3 576 576 547.3 576 512L576 346.5C576 329.5 569.3 313.2 557.3 301.2L498.8 242.7C486.8 230.7 470.5 224 453.5 224L352 224z" />
+          </svg>
+          Paste
+        </button>
+      </div>
+
+      <div class="download-btn">
+        <!-- NORMAL DOWNLOAD -->
+        <div class="n-btn">
+          <button onclick="queueDownload('video')" class="db1 d-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="db1-svg">
+              <path
+                d="M128 128C92.7 128 64 156.7 64 192L64 448C64 483.3 92.7 512 128 512L384 512C419.3 512 448 483.3 448 448L448 192C448 156.7 419.3 128 384 128L128 128zM496 400L569.5 458.8C573.7 462.2 578.9 464 584.3 464C597.4 464 608 453.4 608 440.3L608 199.7C608 186.6 597.4 176 584.3 176C578.9 176 573.7 177.8 569.5 181.2L496 240L496 400z" />
+            </svg>
+            Download mp4
+          </button>
+
+          <button onclick="queueDownload('audio')" class="db2 d-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="db2-svg">
+              <path
+                d="M18 3v11.5a3.5 3.5 0 1 1-2-3.15V7.2l-8 1.6v8.7a3.5 3.5 0 1 1-2-3.15V6.5a1 1 0 0 1 .8-.98l10-2A1 1 0 0 1 18 3z" />
+            </svg>
+            Download mp3
+          </button>
+        </div>
+
+        <!-- CUSTOM BUTTON -->
+        <div class="custom-d">
+          <!-- CUSTOM DOWNLOAD -->
+          <!-- Toggle Button -->
+          <button id="customDownloadToggle" class="custom-toggle" type="button" aria-expanded="false"
+            aria-controls="customDownloadPanel">
+            <span>Custom Download</span>
+            <span class="toggle-arrow">▼</span>
+          </button>
+
+          <!-- Expandable Panel -------------->
+          <div id="customDownloadPanel" class="custom-panel" aria-hidden="true">
+            <!-- Type -->
+            <div class="custom-group">
+              <label class="select-label" for="downloadType">Type</label>
+
+              <select id="downloadType" class="custom-select">
+                <option value="audio">Audio</option>
+                <option value="video">Video</option>
+              </select>
+            </div>
+            <hr />
+            <!-- Format -->
+            <div class="custom-group">
+              <label class="select-label" for="downloadFormat"> Format</label>
+
+              <select id="downloadFormat" class="custom-select"></select>
+            </div>
+            <hr />
+            <!-- Quality -->
+            <div class="custom-group">
+              <label class="select-label" for="downloadQuality">Quality</label>
+
+              <select id="downloadQuality" class="custom-select"></select>
+            </div>
+
+            <!-- Download -->
+            <button id="customDownloadBtn" class="db3 d-btn" type="button">
+              Download
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="db3-svg">
+                <path
+                  d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- panel two -->
+    <section id="preview" class="preview-panel card">
+      <h2 id="title" class="media-title"></h2>
+
+      <div class="thumbnail-wrapper">
+        <img id="thumbnail" class="thumbnail-image" src="" alt="" />
+      </div>
+    </section>
+
+
+    <!-- panel three -->
+    <section id="status" class="status-panel card">
+      <div id="progress" class="progress-text"></div>
+      <div id="internet-status" class="status"></div>
+    </section>
+  </main>
+</body>
+
+</html>

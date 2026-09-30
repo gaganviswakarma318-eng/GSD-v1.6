@@ -1,0 +1,14 @@
+export const urlInput = document.getElementById("url");
+export const pasteBtn = document.getElementById("pasteBtn");
+export const customToggle = document.getElementById("customDownloadToggle");
+export const customPanel = document.getElementById("customDownloadPanel");
+export const downloadType = document.getElementById("downloadType");
+export const downloadFormat = document.getElementById("downloadFormat");
+export const downloadQuality = document.getElementById("downloadQuality");
+export const customDownloadBtn = document.getElementById("customDownloadBtn");
+export const previewPanel = document.getElementById("preview");
+export const titleEl = document.getElementById("title");
+export const thumbnailEl = document.getElementById("thumbnail");
+export const statusPanel = document.getElementById("status");
+export const progressEl = document.getElementById("progress");
+export const internetStatusEl = document.getElementById("internet-status");

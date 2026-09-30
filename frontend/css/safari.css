@@ -1,0 +1,25 @@
+@supports (-webkit-touch-callout: none) {
+  select {
+    appearance: auto;
+    -webkit-appearance: menulist;
+    color: var(--text-primary);
+  }
+
+  select::picker-icon {
+    color: var(--accent-color);
+  }
+
+  input {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .input-ios::placeholder {
+    font-size: 16px !important;
+  }
+
+  .input-ios:focus,
+  .input-ios:active {
+    background: none !important;
+  }
+}
